@@ -1,5 +1,6 @@
 import feedparser
-import datetime
+from datetime import timedelta,datetime 
+
 
 url = "https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml"
 feed = feedparser.parse(url)
