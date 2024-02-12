@@ -18,3 +18,18 @@ for entry in feed.entries:
         print("Mon, 12 Feb 2024 10:05:14 +0100",entry.published)
         print("Die aktuellen Beiträge der Seite https://www.tagesschau.de/infoservices/alle-meldungen-100.html",entry.summery)
 
+def fetch_rss_data(url):
+    feed = feedparser.parser(url)
+    print (":", feed.feed.title)
+    for entry in feed.entries:
+        print("tagesschau.de - Die Nachrichten der ARD",entry.title)
+        print("https://www.tagesschau.de/infoservices/alle-meldungen-100.html",entry.link)
+        print("Mon, 12 Feb 2024 10:05:14 +0100",entry.published)
+        print("Die aktuellen Beiträge der Seite https://www.tagesschau.de/infoservices/alle-meldungen-100.html",entry.summery)
+
+
+rss_feed_urls = [
+
+]
+for url in rss_feed_urls:
+    fetch_rss_data(url)
