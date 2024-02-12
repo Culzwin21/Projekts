@@ -1,5 +1,5 @@
 import feedparser
-
+import datetime
 
 url = "https://www.tagesschau.de/infoservices/alle-meldungen-100~rss2.xml"
 feed = feedparser.parse(url)
@@ -7,7 +7,7 @@ feed = feedparser.parse(url)
 print(feed)
 
 now = datetime.now()
-time_range = timedelta(days=1)
+time_range = timedelta(days=1)  # später fixen 
 
 for entry in feed.entries:
     entry_date = datetime.strptime(entry.published," %a, %d %b %Y %H:%M:%S %z")
